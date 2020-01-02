@@ -8,6 +8,7 @@ const server = http.createServer((req, res) => {
     let path = requestedUrl.pathname
     let trimmedPath = path.replace(/^\/+|\/+$/g, '')
     let decoder = new StringDecoder('utf-8')
+    let dataBuffer = ''
     req.on('data', (data) => {
         dataBuffer += decoder.write(data)
     })
